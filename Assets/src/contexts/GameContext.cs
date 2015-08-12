@@ -21,9 +21,14 @@ namespace Assets.src.contexts {
 
         protected override void mapBindings() {
             
+			//signals
             injectionBinder.Bind<OnClickSignal>().ToSingleton();
+			//services
             injectionBinder.Bind<IInputService>().To<InputService>().ToSingleton();
-            mediationBinder.Bind<GameView>().To<GameMediator>();
+			injectionBinder.Bind<IGameDataService>().To<GameDataService>().ToSingleton();
+            //mediators
+			mediationBinder.Bind<GameView>().To<GameMediator>();
+			mediationBinder.Bind<MapView>().To<MapMediator>();
         }
 
     }

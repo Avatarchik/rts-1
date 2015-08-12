@@ -18,7 +18,9 @@ namespace Assets.src.contexts {
             if (!isInitialized)
                 return;
             if (Input.GetMouseButtonUp(0)) {
-                OnClick.Dispatch(Input.mousePosition);
+				var mousePos = Input.mousePosition;
+				mousePos.z = 100;//Camera.main.nearClipPlane;
+                OnClick.Dispatch(mousePos);
             }
         }
     }

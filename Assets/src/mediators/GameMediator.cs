@@ -11,12 +11,12 @@ namespace Assets.src.contexts {
 
 
         public override void OnRegister() {
-            OnClick.AddListener(view.CheckRaycast);
+            //OnClick.AddListener(view.CheckRaycast);
 
         }
 
         public override void OnRemove() {
-            OnClick.RemoveListener(view.CheckRaycast);
+            //OnClick.RemoveListener(view.CheckRaycast);
         }
 
         /*
