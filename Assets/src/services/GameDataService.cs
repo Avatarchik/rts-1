@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class GameDataService : IGameDataService {
 
 	private Dictionary<string, float> commonData = new Dictionary<string, float>() {
-		{"CellSize",5}
+		{"CellCountWidth",10},
+		{"CellCountHeight",10},
+		{"CellSize",1}
+
 	};
 
 	public float GetCommonData(string key) {

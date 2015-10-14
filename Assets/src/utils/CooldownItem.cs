@@ -3,7 +3,7 @@ using Assets.Common.Extensions;
 using UnityEngine;
 using System.Collections;
 
-namespace ru.pragmatix.orbix.world.managers {
+namespace Assets.src.services {
     public class CooldownItem : ICooldownItem {
         public int Id { get; private set; }
         public float Duration { get; private set; }

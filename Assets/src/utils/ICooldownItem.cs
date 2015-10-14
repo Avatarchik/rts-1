@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ru.pragmatix.orbix.world.managers {
+namespace Assets.src.services {
     public interface ICooldownItem {
         int Id { get; }
         float Duration { get; }

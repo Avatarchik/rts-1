@@ -19,7 +19,7 @@ namespace Assets.src.contexts {
                 return;
             if (Input.GetMouseButtonUp(0)) {
 				var mousePos = Input.mousePosition;
-				mousePos.z = 100;//Camera.main.nearClipPlane;
+				mousePos.z = Camera.main.nearClipPlane;
                 OnClick.Dispatch(mousePos);
             }
         }

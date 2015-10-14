@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ru.pragmatix.orbix.world.managers{
-    public class CooldownManager :  ICooldownManager {
+namespace Assets.src.services {
+    public class CooldownService :  ICooldownService {
 
         private readonly Dictionary<float, Dictionary<int, ICooldownItem>> cooldowns = new Dictionary<float, Dictionary<int, ICooldownItem>>();
         private readonly Dictionary<float, float> lastTickTimes = new Dictionary<float, float>(); 
@@ -58,7 +58,7 @@ namespace ru.pragmatix.orbix.world.managers{
             return null;
         }
 
-        public void Update() {
+        public void OnUpdate() {
             var listKeys = lastTickTimes.Keys.ToList();
             foreach (var lastTick in listKeys) {
                 if (!lastTickTimes.ContainsKey(lastTick))

@@ -1,15 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using Assets.src.contexts;
+using Assets.src.mediators;
+using UnityEngine;
 using System.Collections;
 
-public class MapModel : MonoBehaviour {
+namespace Assets.src.model {
+    public class MapModel : IMapModel {
+    
+        [Inject]
+        public MapMediator Mediator { get; set; }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        [Inject]
+        public OnBuildRoadSignal OnBuildRoadSignal { get; set; }
+
+        public void CreateRoad() {
+            OnBuildRoadSignal.Dispatch(new Destination(new Vector2(0,0), new Vector2(5,5)));
+        }
+
+        public void Init(MapCell[,] mapCells, int width, int height) {
+            
+        }
+
+        public Action<RoadModel> OnRoadCreated { get; set; }
+    }
 }
